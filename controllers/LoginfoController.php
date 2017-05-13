@@ -128,7 +128,6 @@ class LoginfoController extends Controller
                 }
             }
         }
-        //print_r($user);
        return\yii\helpers\Json::encode(['date'=>$date,'user'=>$user]);
      }
 /*      

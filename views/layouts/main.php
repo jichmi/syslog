@@ -4,7 +4,6 @@
 /* @var $content string */
 
 use yii\helpers\Html;
-use yii\helpers\Url;
 use yii\bootstrap\Nav;
 use yii\bootstrap\NavBar;
 use yii\widgets\Breadcrumbs;
@@ -37,17 +36,19 @@ AppAsset::register($this);
     echo Nav::widget([
         'options' => ['class' => 'navbar-nav navbar-right'],
         'items' => [
-            ['label' => 'Home', 'url' => ['/site/index']],
-            ['label' => 'About', 'url' => ['/site/about']],
-            ['label' => 'Contact', 'url' => ['/site/contact']],
+            ['label' => '统计视图', 'url' => ['/site/index']],
+            ['label' => '登录信息', 'url' => ['/loginfo/index']],
+            ['label' => '授权信息', 'url' => ['/authinfo/index']],
+            ['label' => '系统消息', 'url' => ['/message/index']],
+            ['label' => '联系我', 'url' => ['/site/contact']],
             Yii::$app->user->isGuest ? (
-                ['label' => 'Login', 'url' => ['/site/login']]
+                ['label' => '登陆', 'url' => ['/site/login']]
             ) : (
                 '<li>'
-                . Html::beginForm(['/site/logout'], 'post')
+                . Html::beginForm(['/site/logout'], 'post', ['class' => 'navbar-form'])
                 . Html::submitButton(
-                    'Logout (' . Yii::$app->user->identity->username . ')',
-                    ['class' => 'btn btn-link logout']
+                    '注销 (' . Yii::$app->user->identity->username . ')',
+                    ['class' => 'btn btn-link']
                 )
                 . Html::endForm()
                 . '</li>'
@@ -56,57 +57,22 @@ AppAsset::register($this);
     ]);
     NavBar::end();
     ?>
-<?php
-    include("/var/www/syslog/views/layouts/bframe.php");
-$items = [
-  ['label'=>'登录记录','items'=>
-    [
-      ['label'=>'当前登录','href'=>Url::toRoute(['loginfo/index'])],
-      ['label'=>'登陆失败','href'=>'#'],
-      ['label'=>'登陆成功','href'=>'#'],
-      ['label'=>'掉线记录','href'=>'#'],
-    ],
-  ],
-  ['label'=>'服务器状态','items'=>
-    [
-      ['label'=>'内存信息','href'=>'#'],
-      ['label'=>'磁盘信息','href'=>'#'],
-      ['label'=>'数据报情况','href'=>'#'],
-      ['label'=>'保持连接数量','href'=>'#'],
-    ],
-  ],
-  ['label'=>'执行记录','items'=>
-    [
-      ['label'=>'授权情况','href'=>'#'],
-      ['label'=>'进程执行','href'=>'#'],
-      ['label'=>'登陆成功','href'=>'#'],
-      ['label'=>'计划任务','href'=>'#'],
-    ],
-  ],
-];
-?>
-<div class="container">
-  <div class="row">
-    <div class = "col-lg-3">
-        <?php
-        if (!Yii::$app->user->isGuest) {
-             menu($items);
-        }
-        ?>
+
+    <div class="container">
+        <?= Breadcrumbs::widget([
+            'links' => isset($this->params['breadcrumbs']) ? $this->params['breadcrumbs'] : [],
+        ]) ?>
+        <?= $content ?>
     </div>
-    <div class="col-lg-9">
-    <?=$content?>
-   </div>
-  </div>
 </div>
 
 <footer class="footer">
     <div class="container">
         <p class="pull-left">&copy; jcm's syslog <?= date('Y') ?></p>
 
-        <p class="pull-right"><?= Yii::t('yii', 'Powered by {jcm}', [
-            'jcm' => '<a href="http://www.jcmblog.cn/" rel="external">' . 'jcm\'blog</a>']);
-?></p>
+        <p class="pull-right"><?= Yii::t('yii', 'Powered by {jcm}', ['jcm' => '<a href="http://www.jcmblog.cn/" rel="external">' . 'jcm</a>'])
+?>
+</p>
     </div>
 </footer>
 

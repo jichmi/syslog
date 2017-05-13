@@ -94,6 +94,47 @@ class MessageController extends Controller
          $res->sendfile('../data/'.$fname);
       }
 
+     public function actionCount(){
+      $connection  = Yii::$app->db;
+      $sql  = "SELECT `creator` as name,DATE_FORMAT(`datetime`,'%Y-%m-%d') as date,COUNT(*) as count FROM `message`  GROUP BY DATE_FORMAT( `datetime`, '%Y-%m-%d' ),`creator`";
+      $command = $connection->createCommand($sql);
+      $res     = $command->queryAll();
+      $user  =array();
+      $date   = array();
+      foreach(array_unique(array_column($res,'date')) as $idate){
+          array_push($date,$idate);
+        }
+      foreach(array_unique(array_column($res,'name')) as $name){
+        /*
+         if(explode(' ',$name)[0]=='debian'){
+            continue;
+           }*/
+          $iuser['name']=$name;
+          $iuser['data']=[];
+          array_push($user,$iuser);
+        }
+      foreach($res as $item){
+        /*
+         if(explode(' ',$item['name'])[0]=='debian'){
+            continue;
+           }*/
+         $dpos = array_search($item['date'],$date);
+         $upos = array_search($item['name'],array_column($user,'name'));
+         $user[$upos]['data'][$dpos] = \intval($item['count']);
+       }
+      foreach($user as &$u){
+          if(count($u['data']) < count($date)){
+              for($i = 0; $i<count($date);$i++){
+                  if(!isset($u['data'][$i])){
+                      $u['data'][$i] = 0;
+                    }
+                }
+            }
+        }
+       return\yii\helpers\Json::encode(['date'=>$date,'user'=>$user]);
+     }
+
+
     /**
      * Updates an existing ArMessage model.
      * If update is successful, the browser will be redirected to the 'view' page.

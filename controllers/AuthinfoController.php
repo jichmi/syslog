@@ -93,6 +93,38 @@ class AuthinfoController extends Controller
         }
     }
 
+     public function actionCount(){
+      $connection  = Yii::$app->db;
+      $sql     = "SELECT `user` as name,DATE_FORMAT(`datetime`,'%Y-%m-%d') as date,COUNT(*) as count FROM `authinfo` GROUP BY DATE_FORMAT( `datetime`, '%Y-%m-%d' ),`user`";
+      $command = $connection->createCommand($sql);
+      $res     = $command->queryAll();
+      $user  =array();
+      $date   = array();
+      foreach(array_unique(array_column($res,'date')) as $idate){
+          array_push($date,$idate);
+        }
+      foreach(array_unique(array_column($res,'name')) as $name){
+          $iuser['name']=$name;
+          $iuser['data']=[];
+          array_push($user,$iuser);
+        }
+      foreach($res as $item){
+         $dpos = array_search($item['date'],$date);
+         $upos = array_search($item['name'],array_column($user,'name'));
+         $user[$upos]['data'][$dpos] = \intval($item['count']);
+       }
+      foreach($user as &$u){
+          if(count($u['data']) < count($date)){
+              for($i = 0; $i<count($date);$i++){
+                  if(!isset($u['data'][$i])){
+                      $u['data'][$i] = 0;
+                    }
+                }
+            }
+        }
+       return\yii\helpers\Json::encode(['date'=>$date,'user'=>$user]);
+     }
+
     /**
      * Updates an existing ArAuthinfo model.
      * If update is successful, the browser will be redirected to the 'view' page.

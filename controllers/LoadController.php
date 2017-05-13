@@ -32,16 +32,21 @@ class LoadController extends Controller
     {
         $loginfo = new \DOMDocument();
         $loginfo->load('../data/test.test');
-        $items = $loginfo->getElementsByTagName('list');
+        $items = $loginfo->getElementsByTagName('item');
         $infos =[];
         foreach($items as $item){
           $info['name']   = \trim($item->getElementsByTagName('name')[0]->nodeValue);
           $info['ip']     = \trim($item->getElementsByTagName('ip')[0]->nodeValue);
           $info['ter']    = \trim($item->getElementsByTagName('ter')[0]->nodeValue);
-          $info['datetime'] = \trim($item->getElementsByTagName('intime')[0]->nodeValue);
+          $info['datetime'] = \trim($item->getElementsByTagName('datetime')[0]->nodeValue);
           $info['last']   = \trim($item->getElementsByTagName('last')[0]->nodeValue);
-          $info['status'] = \trim($item->getElementsByTagName('outtime')[0]->nodeValue);
-          $count = ArLoginfo::findOne($info);
+          $info['status'] = \trim($item->getElementsByTagName('status')[0]->nodeValue);
+          $count = ArLoginfo::findOne([
+            'name'=>$info['name'],
+            'ip'=>$info['ip'],
+            'ter'=>$info['ter'],
+            'datetime'=>$info['datetime'],
+          ]);
           if (!$count['id']) {
             $data = new ArLoginfo();
             $data->name = $info['name'];
@@ -51,7 +56,11 @@ class LoadController extends Controller
             $data->last = $info['last'];
             $data->status = $info['status'];
             $data->save();
-          }
+          }else{
+            $count['last'] = $info['last'];
+            $count['status'] = $info['status'];
+            $count->save();
+            }
           $info['count'] = $count['id'];
           $infos[] = $info;
           $info = [];
@@ -70,7 +79,7 @@ class LoadController extends Controller
           $info['datetime'] = \trim($item->getElementsByTagName('date')[0]->nodeValue);
           $info['type'] = 'sys';
           $info['content'] = \trim($item->getElementsByTagName('content')[0]->nodeValue);
-          $count = ArLoginfo::findOne($info);
+          $count = ArMessage::findOne($info);
           if (!$count['id']) {
           $data = new ArMessage();
           $data->creator = \trim($info['creator']);
@@ -97,7 +106,7 @@ class LoadController extends Controller
           $info['grantor'] = \trim($item->getElementsByTagName('grantor')[0]->nodeValue);
           $info['datetime'] = \trim($item->getElementsByTagName('date')[0]->nodeValue);
           $info['order'] = \trim($item->getElementsByTagName('order')[0]->nodeValue);
-          $count = ArLoginfo::findOne($info);
+          $count = ArAuthinfo::findOne($info);
           if (!$count['id']) {
           $data = new ArAuthinfo();
           $data->user = \trim($info['user']);
