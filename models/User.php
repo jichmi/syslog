@@ -27,6 +27,7 @@ class User extends \yii\base\Object implements \yii\web\IdentityInterface
         ],
     ];
 
+   // private static $users = []
 
     /**
      * @inheritdoc

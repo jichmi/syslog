@@ -1,0 +1,8 @@
+<xml>
+<list><name>jcm     </name> <ter>pts/0       </ter> <ip>192.168.150.1   </ip> <intime>2017-5-10 16:55:58      </intime> <outtime>still logged in           </outtime> <last>            </last></list>
+<list><name>jcm     </name> <ter>pts/0       </ter> <ip>192.168.150.1   </ip> <intime>2017-5-10 15:8:9        </intime> <outtime>2017-5-10 16:55:46        </outtime> <last> 01:47      </last></list>
+<list><name>reboot  </name> <ter>system boot </ter> <ip>3.16.0-4-amd64  </ip> <intime>2017-5-10 15:7:29       </intime> <outtime>2017-5-10 17:4:8          </outtime> <last> 01:56      </last></list>
+<list><name>jcm     </name> <ter>pts/2       </ter> <ip>192.168.150.1   </ip> <intime>2017-2-3 0:53:25        </intime> <outtime>2017-5-10 15:4:55         </outtime> <last> 2318:11    </last></list>
+<list><name>jcm     </name> <ter>tty1        </ter> <ip>0:0:0:0         </ip> <intime>2017-2-3 0:52:17        </intime> <outtime>down                      </outtime> <last> 2318:14    </last></list>
+<list><name>jcm     </name> <ter>pts/2       </ter> <ip>192.168.150.1   </ip> <intime>2017-2-2 23:8:55        </intime> <outtime>2017-2-3 0:53:25          </outtime> <last> 01:44      </last></list>
+</xml>

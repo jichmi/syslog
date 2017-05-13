@@ -28,7 +28,7 @@ AppAsset::register($this);
 <div class="wrap">
     <?php
     NavBar::begin([
-        'brandLabel' => 'My Company',
+        'brandLabel' => 'Sys Log',
         'brandUrl' => Yii::$app->homeUrl,
         'options' => [
             'class' => 'navbar-inverse navbar-fixed-top',
@@ -102,9 +102,11 @@ $items = [
 
 <footer class="footer">
     <div class="container">
-        <p class="pull-left">&copy; My Company <?= date('Y') ?></p>
+        <p class="pull-left">&copy; jcm's syslog <?= date('Y') ?></p>
 
-        <p class="pull-right"><?= Yii::powered() ?></p>
+        <p class="pull-right"><?= Yii::t('yii', 'Powered by {jcm}', [
+            'jcm' => '<a href="http://www.jcmblog.cn/" rel="external">' . 'jcm\'blog</a>']);
+?></p>
     </div>
 </footer>
 

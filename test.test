@@ -1,0 +1,23 @@
+<xml>
+<list><name>jcm     </name> <ter>pts/0       </ter> <ip>192.168.150.1   </ip> <intime>2017-5-10 18:3:10       </intime> <outtime>still logged in           </outtime> <last>            </last></list>
+<list><name>jcm     </name> <ter>pts/14      </ter> <ip>192.168.150.1   </ip> <intime>2017-5-10 17:20:33      </intime> <outtime>2017-5-10 17:24:13        </outtime> <last> 00:03      </last></list>
+<list><name>jcm     </name> <ter>pts/13      </ter> <ip>192.168.150.1   </ip> <intime>2017-5-10 17:20:15      </intime> <outtime>2017-5-10 18:2:51         </outtime> <last> 00:42      </last></list>
+<list><name>jcm     </name> <ter>pts/12      </ter> <ip>192.168.150.1   </ip> <intime>2017-5-10 17:20:14      </intime> <outtime>2017-5-10 18:2:51         </outtime> <last> 00:42      </last></list>
+<list><name>jcm     </name> <ter>pts/11      </ter> <ip>192.168.150.1   </ip> <intime>2017-5-10 17:20:9       </intime> <outtime>2017-5-10 18:2:51         </outtime> <last> 00:42      </last></list>
+<list><name>jcm     </name> <ter>pts/10      </ter> <ip>192.168.150.1   </ip> <intime>2017-5-10 17:20:8       </intime> <outtime>2017-5-10 18:2:51         </outtime> <last> 00:42      </last></list>
+<list><name>jcm     </name> <ter>pts/9       </ter> <ip>192.168.150.1   </ip> <intime>2017-5-10 17:20:7       </intime> <outtime>2017-5-10 18:2:51         </outtime> <last> 00:42      </last></list>
+<list><name>jcm     </name> <ter>pts/8       </ter> <ip>192.168.150.1   </ip> <intime>2017-5-10 17:19:59      </intime> <outtime>2017-5-10 18:2:51         </outtime> <last> 00:42      </last></list>
+<list><name>jcm     </name> <ter>pts/7       </ter> <ip>192.168.150.1   </ip> <intime>2017-5-10 17:19:58      </intime> <outtime>2017-5-10 18:2:51         </outtime> <last> 00:42      </last></list>
+<list><name>jcm     </name> <ter>pts/6       </ter> <ip>192.168.150.1   </ip> <intime>2017-5-10 17:19:58      </intime> <outtime>2017-5-10 18:2:51         </outtime> <last> 00:42      </last></list>
+<list><name>jcm     </name> <ter>pts/5       </ter> <ip>192.168.150.1   </ip> <intime>2017-5-10 17:19:57      </intime> <outtime>2017-5-10 18:2:51         </outtime> <last> 00:42      </last></list>
+<list><name>jcm     </name> <ter>pts/4       </ter> <ip>192.168.150.1   </ip> <intime>2017-5-10 17:19:56      </intime> <outtime>2017-5-10 18:2:51         </outtime> <last> 00:42      </last></list>
+<list><name>jcm     </name> <ter>pts/3       </ter> <ip>192.168.150.1   </ip> <intime>2017-5-10 17:19:54      </intime> <outtime>2017-5-10 18:2:51         </outtime> <last> 00:42      </last></list>
+<list><name>jcm     </name> <ter>pts/2       </ter> <ip>192.168.150.1   </ip> <intime>2017-5-10 17:19:53      </intime> <outtime>2017-5-10 18:2:51         </outtime> <last> 00:42      </last></list>
+<list><name>jcm     </name> <ter>pts/1       </ter> <ip>192.168.150.1   </ip> <intime>2017-5-10 17:18:48      </intime> <outtime>2017-5-10 18:2:51         </outtime> <last> 00:44      </last></list>
+<list><name>jcm     </name> <ter>pts/0       </ter> <ip>192.168.150.1   </ip> <intime>2017-5-10 16:55:58      </intime> <outtime>2017-5-10 18:2:28         </outtime> <last> 01:06      </last></list>
+<list><name>jcm     </name> <ter>pts/0       </ter> <ip>192.168.150.1   </ip> <intime>2017-5-10 15:8:9        </intime> <outtime>2017-5-10 16:55:46        </outtime> <last> 01:47      </last></list>
+<list><name>reboot  </name> <ter>system boot </ter> <ip>3.16.0-4-amd64  </ip> <intime>2017-5-10 15:7:29       </intime> <outtime>2017-5-10 18:3:38         </outtime> <last> 02:56      </last></list>
+<list><name>jcm     </name> <ter>pts/2       </ter> <ip>192.168.150.1   </ip> <intime>2017-2-3 0:53:25        </intime> <outtime>2017-5-10 15:4:55         </outtime> <last> 2318:11    </last></list>
+<list><name>jcm     </name> <ter>tty1        </ter> <ip>0:0:0:0         </ip> <intime>2017-2-3 0:52:17        </intime> <outtime>down                      </outtime> <last> 2318:14    </last></list>
+<list><name>jcm     </name> <ter>pts/2       </ter> <ip>192.168.150.1   </ip> <intime>2017-2-2 23:8:55        </intime> <outtime>2017-2-3 0:53:25          </outtime> <last> 01:44      </last></list>
+</xml>

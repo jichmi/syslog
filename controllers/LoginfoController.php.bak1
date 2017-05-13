@@ -1,0 +1,90 @@
+<?php
+
+namespace app\controllers;
+
+use Yii;
+use yii\filters\AccessControl;
+use yii\web\Controller;
+use yii\filters\VerbFilter;
+use app\models\LoginForm;
+use app\models\ComLast;
+use app\models\ComLastb;
+use app\models\ComReboot;
+use app\models\ContactForm;
+
+class LoginfoController extends Controller
+{
+    /**
+     * @inheritdoc
+     */
+    public function behaviors()
+    {
+        return [
+            'access' => [
+                'class' => AccessControl::className(),
+                'only' => ['logout'],
+                'rules' => [
+                    [
+                        'actions' => ['logout'],
+                        'allow' => true,
+                        'roles' => ['@'],
+                    ],
+                ],
+            ],
+            'verbs' => [
+                'class' => VerbFilter::className(),
+                'actions' => [
+                    'logout' => ['post'],
+                ],
+            ],
+        ];
+    }
+
+    /**
+     * @inheritdoc
+     */
+    public function actions()
+    {
+        return [
+            'error' => [
+                'class' => 'yii\web\ErrorAction',
+            ],
+            'captcha' => [
+                'class' => 'yii\captcha\CaptchaAction',
+                'fixedVerifyCode' => YII_ENV_TEST ? 'testme' : null,
+            ],
+        ];
+    }
+    public function actionStillLogin()
+    {
+      $last = new Comlast;
+      $content = $last->getOut('inline');
+      return $this->render('output',['content'=>$content]);
+    }
+    public function actionIndex(){
+      $last = new Comlast;
+      $content = $last->getOut();
+      return $this->render('output',['content'=>$content]);
+   }
+    public function actionFailLogin(){
+      $last = new Comlastb;
+      $content = $last->getOut();
+      return $this->render('output',['content'=>$content]);
+    }
+    public function actionSuccessLogin(){
+      $last = new Comlast;
+      $content = $last->getOut();
+      return $this->render('output',['content'=>$content]);
+    }
+    //TODO Down list??
+    public function actionCrash(){
+      $last = new Comlast;
+      $content = $last->getOut('crash');
+      return $this->render('output',['content'=>$content]);
+    }
+    public function actionReboot(){
+      $last = new ComReboot;
+      $content = $last->getOut();
+      return $this->render('output',['content'=>$content]);
+    }
+}
