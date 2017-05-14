@@ -31,7 +31,7 @@ class LoadController extends Controller
     public function actionIndex()
     {
         $loginfo = new \DOMDocument();
-        $loginfo->load('../data/test.test');
+        $loginfo->load('../data/login.xml');
         $items = $loginfo->getElementsByTagName('item');
         $infos =[];
         foreach($items as $item){
@@ -98,7 +98,7 @@ class LoadController extends Controller
     public function actionAuth()
     {
         $loginfo = new \DOMDocument();
-        $loginfo->load('../data/auth.xml');
+        $loginfo->load('../data/auths.xml');
         $items = $loginfo->getElementsByTagName('item');
         $infos =[];
         foreach($items as $item){

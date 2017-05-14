@@ -1,7 +1,6 @@
 <?php
 include dirname(__FILE__)."/../models/const.php";
-     header('Content-Type:text/html;chatset=utf-8');
-//TODO read data from "/var/log/message" to "./message.xml". the same as "auth.php"
+  header('Content-Type:text/html;chatset=utf-8');
   $filePath = '/var/log/messages';
   $file = fopen($filePath,'r') or die("cannot open file");
   $xml = simplexml_load_file("message.xml");
@@ -37,6 +36,5 @@ include dirname(__FILE__)."/../models/const.php";
       exit("fail to open");
      }
      $fxml = $xml->asXML();
-     file_put_contents('../data/messages.xml',$fxml);
- //     }
-//  }
+     file_put_contents('./messages.xml',$fxml);
+     echo 'message load success';

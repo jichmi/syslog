@@ -3098,28 +3098,4 @@
 </content></item><item><date>2017-05-14 10:16:54</date><domean>debian</domean><crter>kernel</crter><lv>0</lv><content> FS-Cache: Netfs 'nfs' registered for caching
 </content></item><item><date>2017-05-14 10:16:54</date><domean>debian</domean><crter>kernel</crter><lv>0</lv><content> Installing knfsd (copyright (C) 1996 okir@monad.swb.de).
 </content></item><item><date>2017-05-14 10:16:56</date><domean>debian</domean><crter>rsyslogd-2007</crter><lv>1</lv><content>action 'action 17' suspended, next retry is Sun May 14 22:17:26 2017 [try http://www.rsyslog.com/e/2007 ]
-</content></item><item><date>2017-05-14 11:07:01</date><domean>debian</domean><crter>rsyslogd0</crter><lv>5</lv><content>action 'action 18' resumed (module 'builtin:omfwd') [try http://www.rsyslog.com/e/0 ]
-</content></item><item><date>2017-05-14 11:07:01</date><domean>debian</domean><crter>rsyslogd0</crter><lv>5</lv><content>action 'action 18' resumed (module 'builtin:omfwd') [try http://www.rsyslog.com/e/0 ]
-</content></item><item><date>2017-05-14 11:07:01</date><domean>debian</domean><crter>rsyslogd0</crter><lv>5</lv><content>action 'action 18' resumed (module 'builtin:omfwd') [try http://www.rsyslog.com/e/0 ]
-</content></item><item><date>2017-05-14 11:07:01</date><domean>debian</domean><crter>rsyslogd0</crter><lv>5</lv><content>action 'action 18' resumed (module 'builtin:omfwd') [try http://www.rsyslog.com/e/0 ]
-</content></item><item><date>2017-05-14 11:07:01</date><domean>debian</domean><crter>rsyslogd0</crter><lv>5</lv><content>action 'action 18' resumed (module 'builtin:omfwd') [try http://www.rsyslog.com/e/0 ]
-</content></item><item><date>2017-05-14 11:07:01</date><domean>debian</domean><crter>rsyslogd0</crter><lv>5</lv><content>action 'action 18' resumed (module 'builtin:omfwd') [try http://www.rsyslog.com/e/0 ]
-</content></item><item><date>2017-05-14 11:07:01</date><domean>debian</domean><crter>rsyslogd0</crter><lv>5</lv><content>action 'action 18' resumed (module 'builtin:omfwd') [try http://www.rsyslog.com/e/0 ]
-</content></item><item><date>2017-05-14 11:07:01</date><domean>debian</domean><crter>rsyslogd0</crter><lv>5</lv><content>action 'action 18' resumed (module 'builtin:omfwd') [try http://www.rsyslog.com/e/0 ]
-</content></item><item><date>2017-05-14 11:07:01</date><domean>debian</domean><crter>rsyslogd0</crter><lv>5</lv><content>action 'action 18' resumed (module 'builtin:omfwd') [try http://www.rsyslog.com/e/0 ]
-</content></item><item><date>2017-05-14 11:07:01</date><domean>debian</domean><crter>rsyslogd-2007</crter><lv>1</lv><content>action 'action 18' suspended, next retry is Sun May 14 23:07:31 2017 [try http://www.rsyslog.com/e/2007 ]
-</content></item><item><date>2017-05-15 01:35:12</date><domean>debian</domean><crter>rsyslogd0</crter><lv>5</lv><content>action 'action 18' resumed (module 'builtin:omfwd') [try http://www.rsyslog.com/e/0 ]
-</content></item><item><date>2017-05-15 01:35:12</date><domean>debian</domean><crter>rsyslogd0</crter><lv>5</lv><content>action 'action 18' resumed (module 'builtin:omfwd') [try http://www.rsyslog.com/e/0 ]
-</content></item><item><date>2017-05-15 01:35:12</date><domean>debian</domean><crter>rsyslogd0</crter><lv>5</lv><content>action 'action 18' resumed (module 'builtin:omfwd') [try http://www.rsyslog.com/e/0 ]
-</content></item><item><date>2017-05-15 01:35:12</date><domean>debian</domean><crter>rsyslogd0</crter><lv>5</lv><content>action 'action 18' resumed (module 'builtin:omfwd') [try http://www.rsyslog.com/e/0 ]
-</content></item><item><date>2017-05-15 01:35:12</date><domean>debian</domean><crter>rsyslogd0</crter><lv>5</lv><content>action 'action 18' resumed (module 'builtin:omfwd') [try http://www.rsyslog.com/e/0 ]
-</content></item><item><date>2017-05-15 01:35:12</date><domean>debian</domean><crter>rsyslogd0</crter><lv>5</lv><content>action 'action 18' resumed (module 'builtin:omfwd') [try http://www.rsyslog.com/e/0 ]
-</content></item><item><date>2017-05-15 01:35:12</date><domean>debian</domean><crter>rsyslogd0</crter><lv>5</lv><content>action 'action 18' resumed (module 'builtin:omfwd') [try http://www.rsyslog.com/e/0 ]
-</content></item><item><date>2017-05-15 01:35:12</date><domean>debian</domean><crter>rsyslogd0</crter><lv>5</lv><content>action 'action 18' resumed (module 'builtin:omfwd') [try http://www.rsyslog.com/e/0 ]
-</content></item><item><date>2017-05-15 01:35:12</date><domean>debian</domean><crter>rsyslogd0</crter><lv>5</lv><content>action 'action 18' resumed (module 'builtin:omfwd') [try http://www.rsyslog.com/e/0 ]
-</content></item><item><date>2017-05-15 01:35:12</date><domean>debian</domean><crter>rsyslogd0</crter><lv>5</lv><content>action 'action 18' resumed (module 'builtin:omfwd') [try http://www.rsyslog.com/e/0 ]
-</content></item><item><date>2017-05-15 01:35:12</date><domean>debian</domean><crter>rsyslogd-2007</crter><lv>1</lv><content>action 'action 18' suspended, next retry is Mon May 15 01:35:42 2017 [try http://www.rsyslog.com/e/2007 ]
-</content></item><item><date>2017-05-15 01:35:13</date><domean>debian</domean><crter>kernel</crter><lv>0</lv><content> pcnet32 0000:02:01.0 eth0: link up
-</content></item><item><date>2017-05-15 01:39:01</date><domean>debian</domean><crter>rsyslogd0</crter><lv>5</lv><content>action 'action 18' resumed (module 'builtin:omfwd') [try http://www.rsyslog.com/e/0 ]
-</content></item><item><date>2017-05-15 01:39:01</date><domean>debian</domean><crter>rsyslogd-2359</crter><lv>5</lv><content>action 'action 18' resumed (module 'builtin:omfwd') [try http://www.rsyslog.com/e/2359 ]
 </content></item></object>

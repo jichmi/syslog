@@ -32,15 +32,11 @@
              }
          $xnode->addChild('user',$item['user']);
          $xnode->addChild('order',$item['order']);
-//         print_r($line);
-//         print_r($item);
        }
     }
   else{
       exit("fail to open");
      }
      $fxml = $xml->asXML();
-     file_put_contents('../data/auth.xml',$fxml);
-     echo $fxml;
- //     }
-//  }
+     file_put_contents('./auths.xml',$fxml);
+     echo 'load auth info success';

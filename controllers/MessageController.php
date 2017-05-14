@@ -96,7 +96,12 @@ class MessageController extends Controller
 
      public function actionCount(){
       $connection  = Yii::$app->db;
-      $sql  = "SELECT `creator` as name,DATE_FORMAT(`datetime`,'%Y-%m-%d') as date,COUNT(*) as count FROM `message`  GROUP BY DATE_FORMAT( `datetime`, '%Y-%m-%d' ),`creator`";
+      $sql  = "SELECT `creator` as name,DATE_FORMAT(`datetime`,'%Y-%m-%d') as date,COUNT(*) as count FROM `message` ";
+      $para = Yii::$app->request->get('name');
+      if($para != ''){
+        $sql .= " where `creator`!='". $para."'";
+        }
+      $sql .=" GROUP BY DATE_FORMAT( `datetime`, '%Y-%m-%d' ),`creator`";
       $command = $connection->createCommand($sql);
       $res     = $command->queryAll();
       $user  =array();
@@ -105,19 +110,11 @@ class MessageController extends Controller
           array_push($date,$idate);
         }
       foreach(array_unique(array_column($res,'name')) as $name){
-        /*
-         if(explode(' ',$name)[0]=='debian'){
-            continue;
-           }*/
           $iuser['name']=$name;
           $iuser['data']=[];
           array_push($user,$iuser);
         }
       foreach($res as $item){
-        /*
-         if(explode(' ',$item['name'])[0]=='debian'){
-            continue;
-           }*/
          $dpos = array_search($item['date'],$date);
          $upos = array_search($item['name'],array_column($user,'name'));
          $user[$upos]['data'][$dpos] = \intval($item['count']);
@@ -130,6 +127,7 @@ class MessageController extends Controller
                     }
                 }
             }
+            ksort($u['data']);
         }
        return\yii\helpers\Json::encode(['date'=>$date,'user'=>$user]);
      }

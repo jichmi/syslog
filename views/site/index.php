@@ -94,9 +94,9 @@ function fnAuth(){
       }
      });
 }
-function fnMessage(){
+function fnMessage(name){
   $.ajax({
-    url:"<?= Yii::$app->urlManager->createUrl('message/count')?>",
+    url:"<?= Yii::$app->urlManager->createUrl('message/count')?>&name="+name,
     success:function(result){
       response = JSON.parse(result);
       console.log(response.date);
@@ -122,6 +122,16 @@ function fnMessage(){
         text: 'count' //指定y轴的标题
         }
         },
+        plotOptions: {
+        series: {
+          cursor: 'line',
+          events: {
+            click: function(event) {
+              fnMessage(this.name);
+            }
+          }
+        }
+      },
         series:response.user
         });
       }
