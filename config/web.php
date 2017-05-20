@@ -11,11 +11,14 @@ $config = [
             // !!! insert a secret key in the following (if it is empty) - this is required by cookie validation
             'cookieValidationKey' => 'xQHQ9WtNz0qtlL5CF0jkIdC7EaM4J0y-',
         ],
+        //'authCheckFilter' => [
+        //            'class' => 'app\component\authCheckFilter', 
+        //                    ],
         'cache' => [
             'class' => 'yii\caching\FileCache',
         ],
         'user' => [
-            'identityClass' => 'app\models\User',
+            'identityClass' => 'app\models\ArUser',
             'enableAutoLogin' => true,
         ],
         'errorHandler' => [
@@ -63,5 +66,10 @@ if (YII_ENV_DEV) {
         'allowedIPs' => ['127.0.0.1', '::1', '192.168.*.*'] // 按需调整这里
     ];
 }
+    $config['modules']['admin'] = [
+        'class' => 'mdm\admin\Module',
+        'layout' => 'left-menu',//yii2-admin的导航菜单
+    ];
+
 
 return $config;

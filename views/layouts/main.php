@@ -47,7 +47,7 @@ AppAsset::register($this);
                 '<li>'
                 . Html::beginForm(['/site/logout'], 'post', ['class' => 'navbar-form'])
                 . Html::submitButton(
-                    '注销 (' . Yii::$app->user->identity->username . ')',
+                    '注销 (' . Yii::$app->user->identity->name  .')',
                     ['class' => 'btn btn-link']
                 )
                 . Html::endForm()

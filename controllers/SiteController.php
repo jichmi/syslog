@@ -6,6 +6,9 @@ use Yii;
 use yii\filters\AccessControl;
 use yii\filters\VerbFilter;
 use yii\web\Controller;
+use app\components\AuthCheckFilter;
+use app\components\Loger;
+use app\models\ArUser;
 use app\models\LoginForm;
 use app\models\ContactForm;
 
@@ -19,15 +22,24 @@ class SiteController extends Controller
         return [
             'access' => [
                 'class' => AccessControl::className(),
-                'only' => ['logout'],
+                'only' => ['logout','contact','index'],
                 'rules' => [
                     [
-                        'actions' => ['logout'],
+                        'actions' => ['logout','index','contact'],
                         'allow' => true,
                         'roles' => ['@'],
                     ],
                 ],
             ],
+            'checkType' =>[
+              'class' =>AuthCheckFilter::className(),
+              'only'  =>['index',],
+              'type'  =>'admin',
+              ],
+            'loger' =>[
+              'class' =>Loger::className(),
+              'only'  =>['index',],
+              ],
             'verbs' => [
                 'class' => VerbFilter::className(),
                 'actions' => [

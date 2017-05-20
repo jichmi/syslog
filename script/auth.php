@@ -39,4 +39,4 @@
      }
      $fxml = $xml->asXML();
      file_put_contents('./auths.xml',$fxml);
-     echo 'load auth info success';
+     echo 'load auth info success\n';

@@ -12,13 +12,13 @@ include dirname(__FILE__)."/../models/const.php";
            $a_str = explode(': ',$line,2);
            if(count($a_str)!=2) break;
            $xnode = $xml->addChild('item');
-           $date = explode(' ',$a_str[0],5);
+           $date = preg_split('/\s+/',$a_str[0],5);
            $item['date']='2017-'.$_MONTH[$date[0]].'-'.$date[1].' '.$date[2];
            $item['date'] = date("Y-m-d h:i:s",strtotime($item['date'])); 
            $xnode->addChild('date',$item['date']);
            $item['domean'] = $date[3];
            $xnode->addChild('domean',$item['domean']);
-           $item['crter']  = $date[4];
+           $item['crter']  = preg_replace('/\[[0-9]{1,}\]/','',$date[4]);
            $xnode->addChild('crter',$item['crter']);
            if(array_key_exists($item['crter'],$_LV)){
                 $item['lv'] =  $_LV[$item['crter']];
