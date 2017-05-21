@@ -14,6 +14,7 @@ $this->params['breadcrumbs'][] = $this->title;
 
     <h1><?= Html::encode($this->title) ?>
     <?= Html::a('download', ['download'], ['class' => 'btn btn-success']) ?>
+    <?= Html::a('统计', ['report'], ['class' => 'btn btn-success']) ?>
     </h1>
  
     <?= GridView::widget([

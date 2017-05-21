@@ -3,31 +3,16 @@
 namespace app\models;
 
 use Yii;
+use app\models\Utils;
 
-/**
- * This is the model class for table "loginfo".
- *
- * @property integer $id
- * @property string $datetime
- * @property string $last
- * @property string $status
- * @property string $ip
- * @property string $ter
- * @property string $name
- */
+
 class ArLoginfo extends \yii\db\ActiveRecord
 {
-    /**
-     * @inheritdoc
-     */
     public static function tableName()
     {
         return 'loginfo';
     }
 
-    /**
-     * @inheritdoc
-     */
     public function rules()
     {
         return [
@@ -39,9 +24,6 @@ class ArLoginfo extends \yii\db\ActiveRecord
         ];
     }
 
-    /**
-     * @inheritdoc
-     */
     public function attributeLabels()
     {
         return [
@@ -54,4 +36,13 @@ class ArLoginfo extends \yii\db\ActiveRecord
             'name' => 'Name',
         ];
     }
+    public function timeline($range = '')
+    {
+        return Utils::timeline(ArLoginfo::tableName(),'name');
+    }
+    public function rate($range ='')
+    {
+        return Utils::rate(ArLoginfo::tableName(),'name');
+    }
 }
+?>

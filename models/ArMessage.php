@@ -3,30 +3,15 @@
 namespace app\models;
 
 use Yii;
+use app\models\Utils;
 
-/**
- * This is the model class for table "message".
- *
- * @property integer $id
- * @property string $datetime
- * @property string $creator
- * @property string $content
- * @property string $type
- * @property integer $lv
- */
 class ArMessage extends \yii\db\ActiveRecord
 {
-    /**
-     * @inheritdoc
-     */
     public static function tableName()
     {
         return 'message';
     }
 
-    /**
-     * @inheritdoc
-     */
     public function rules()
     {
         return [
@@ -39,9 +24,6 @@ class ArMessage extends \yii\db\ActiveRecord
         ];
     }
 
-    /**
-     * @inheritdoc
-     */
     public function attributeLabels()
     {
         return [
@@ -52,5 +34,13 @@ class ArMessage extends \yii\db\ActiveRecord
             'type' => 'Type',
             'lv' => 'Lv',
         ];
+    }
+    public function timeline()
+    {
+        return Utils::timeline(ArMessage::tableName(),'creator');
+    }
+    public function rate()
+    {
+        return Utils::rate(ArMessage::tableName(),'creator');
     }
 }

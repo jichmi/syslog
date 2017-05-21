@@ -7,13 +7,14 @@ use yii\grid\GridView;
 /* @var $searchModel app\models\LoginfoSearch */
 /* @var $dataProvider yii\data\ActiveDataProvider */
 
-$this->title = 'Ar Loginfos';
+$this->title = '登录信息';
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="ar-loginfo-index">
 
     <h1><?= Html::encode($this->title) ?>
         <?= Html::a('download data', ['download'], ['class' => 'btn btn-success']) ?>
+        <?= Html::a('统计', ['report'], ['class' => 'btn btn-success']) ?>
     </h1>
     <?php // echo $this->render('_search', ['model' => $searchModel]); ?>
 

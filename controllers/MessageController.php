@@ -29,10 +29,6 @@ class MessageController extends Controller
         ];
     }
 
-    /**
-     * Lists all ArMessage models.
-     * @return mixed
-     */
     public function actionIndex()
     {
         $searchModel = new MessageSearch();
@@ -56,11 +52,10 @@ class MessageController extends Controller
         ]);
     }
 
-    /**
-     * Creates a new ArMessage model.
-     * If creation is successful, the browser will be redirected to the 'view' page.
-     * @return mixed
-     */
+    public function actionReport()
+    {
+        return $this->render('report');    
+    }
     public function actionCreate()
     {
         $model = new ArMessage();
@@ -73,6 +68,15 @@ class MessageController extends Controller
             ]);
         }
     }
+
+     public function actionTimeline(){
+         return\yii\helpers\Json::encode(ArMessage::timeline());
+     }
+
+     public function actionRate(){
+         return\yii\helpers\Json::encode(ArMessage::rate());
+     }
+ 
     public function actionDownload(){
          header('Content-Type:text/html;chatset=utf-8');
          $xml = simplexml_load_file("../script/message.xml");
@@ -96,10 +100,17 @@ class MessageController extends Controller
 
      public function actionCount(){
       $connection  = Yii::$app->db;
-      $sql  = "SELECT `creator` as name,DATE_FORMAT(`datetime`,'%Y-%m-%d') as date,COUNT(*) as count FROM `message` ";
+      $sql  = "SELECT `creator` as name,DATE_FORMAT(`datetime`,'%Y-%m-%d') as date,COUNT(*) as count FROM `message`";
       $para = Yii::$app->request->get('name');
       if($para != ''){
-        $sql .= " where `creator`!='". $para."'";
+        $sql .= " where `creator` not in (";
+        foreach(explode(',',$para) as $name){
+            if($name!= ''){
+                $sql .=  "'" .$name. "',";
+            }
+          }
+          $sql = rtrim($sql,',');
+          $sql .= ')';
         }
       $sql .=" GROUP BY DATE_FORMAT( `datetime`, '%Y-%m-%d' ),`creator`";
       $command = $connection->createCommand($sql);

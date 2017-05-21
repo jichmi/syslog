@@ -36,7 +36,7 @@ AppAsset::register($this);
     echo Nav::widget([
         'options' => ['class' => 'navbar-nav navbar-right'],
         'items' => [
-            ['label' => '统计视图', 'url' => ['/site/index']],
+            ['label' => '系统管理', 'url' => ['/site/index']],
             ['label' => '登录信息', 'url' => ['/loginfo/index']],
             ['label' => '授权信息', 'url' => ['/authinfo/index']],
             ['label' => '系统消息', 'url' => ['/message/index']],

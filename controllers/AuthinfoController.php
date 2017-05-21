@@ -55,6 +55,11 @@ class AuthinfoController extends Controller
             'model' => $this->findModel($id),
         ]);
     }
+    
+    public function actionReport()
+    {
+        return $this->render('report');    
+    }
 
     public function actionDownload(){
          header('Content-Type:text/html;chatset=utf-8');
@@ -75,11 +80,7 @@ class AuthinfoController extends Controller
          $res=\YII::$app->response;
          $res->sendfile('../data/'.$fname);
       }
-    /**
-     * Creates a new ArAuthinfo model.
-     * If creation is successful, the browser will be redirected to the 'view' page.
-     * @return mixed
-     */
+   
     public function actionCreate()
     {
         $model = new ArAuthinfo();
@@ -93,44 +94,22 @@ class AuthinfoController extends Controller
         }
     }
 
-     public function actionCount(){
-      $connection  = Yii::$app->db;
-      $sql     = "SELECT `user` as name,DATE_FORMAT(`datetime`,'%Y-%m-%d') as date,COUNT(*) as count FROM `authinfo` GROUP BY DATE_FORMAT( `datetime`, '%Y-%m-%d' ),`user`";
-      $command = $connection->createCommand($sql);
-      $res     = $command->queryAll();
-      $user  =array();
-      $date   = array();
-      foreach(array_unique(array_column($res,'date')) as $idate){
-          array_push($date,$idate);
-        }
-      foreach(array_unique(array_column($res,'name')) as $name){
-          $iuser['name']=$name;
-          $iuser['data']=[];
-          array_push($user,$iuser);
-        }
-      foreach($res as $item){
-         $dpos = array_search($item['date'],$date);
-         $upos = array_search($item['name'],array_column($user,'name'));
-         $user[$upos]['data'][$dpos] = \intval($item['count']);
-       }
-      foreach($user as &$u){
-          if(count($u['data']) < count($date)){
-              for($i = 0; $i<count($date);$i++){
-                  if(!isset($u['data'][$i])){
-                      $u['data'][$i] = 0;
-                    }
-                }
-            }
-        }
-       return\yii\helpers\Json::encode(['date'=>$date,'user'=>$user]);
+     public function actionUserTimeline(){
+         return \yii\helpers\Json::encode(ArAuthinfo::userTimeline());
      }
 
-    /**
-     * Updates an existing ArAuthinfo model.
-     * If update is successful, the browser will be redirected to the 'view' page.
-     * @param integer $id
-     * @return mixed
-     */
+     public function actionGrantorTimeline(){
+         return \yii\helpers\Json::encode(ArAuthinfo::grantorTimeline());
+     }
+
+     public function actionUserRate(){
+         return \yii\helpers\Json::encode(ArAuthinfo::userRate());
+     }
+
+     public function actionGrantorRate(){
+         return \yii\helpers\Json::encode(ArAuthinfo::grantorRate());
+     }
+
     public function actionUpdate($id)
     {
         $model = $this->findModel($id);
@@ -144,12 +123,6 @@ class AuthinfoController extends Controller
         }
     }
 
-    /**
-     * Deletes an existing ArAuthinfo model.
-     * If deletion is successful, the browser will be redirected to the 'index' page.
-     * @param integer $id
-     * @return mixed
-     */
     public function actionDelete($id)
     {
         $this->findModel($id)->delete();
@@ -157,13 +130,6 @@ class AuthinfoController extends Controller
         return $this->redirect(['index']);
     }
 
-    /**
-     * Finds the ArAuthinfo model based on its primary key value.
-     * If the model is not found, a 404 HTTP exception will be thrown.
-     * @param integer $id
-     * @return ArAuthinfo the loaded model
-     * @throws NotFoundHttpException if the model cannot be found
-     */
     protected function findModel($id)
     {
         if (($model = ArAuthinfo::findOne($id)) !== null) {

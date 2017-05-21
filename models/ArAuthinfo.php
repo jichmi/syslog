@@ -3,28 +3,15 @@
 namespace app\models;
 
 use Yii;
+use app\models\Utils;
 
-/**
- * This is the model class for table "authinfo".
- *
- * @property integer $id
- * @property string $datetime
- * @property string $user
- * @property string $grantor
- */
 class ArAuthinfo extends \yii\db\ActiveRecord
 {
-    /**
-     * @inheritdoc
-     */
     public static function tableName()
     {
         return 'authinfo';
     }
 
-    /**
-     * @inheritdoc
-     */
     public function rules()
     {
         return [
@@ -35,9 +22,6 @@ class ArAuthinfo extends \yii\db\ActiveRecord
         ];
     }
 
-    /**
-     * @inheritdoc
-     */
     public function attributeLabels()
     {
         return [
@@ -48,4 +32,17 @@ class ArAuthinfo extends \yii\db\ActiveRecord
             'order' => 'Order',
         ];
     }
+    public function userTimeline(){
+       return Utils::timeline(ArAuthinfo::tableName(),'user');
+    }
+    public function grantorTimeline(){
+       return Utils::timeline(ArAuthinfo::tableName(),'grantor');
+    }
+    public function userRate(){
+       return Utils::rate(ArAuthinfo::tableName(),'user');
+    }
+    public function grantorRate(){
+       return Utils::rate(ArAuthinfo::tableName(),'grantor');
+    }
+
 }
