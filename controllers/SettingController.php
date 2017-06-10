@@ -3,11 +3,13 @@
 namespace app\controllers;
 
 use Yii;
-use app\models\ArSetting;
-use app\models\SettingSearch;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
+use app\components\AuthCheckFilter;
+use app\components\Loger;
+use app\models\ArSetting;
+use app\models\SettingSearch;
 
 /**
  * SettingController implements the CRUD actions for ArSetting model.
@@ -26,6 +28,14 @@ class SettingController extends Controller
                     'delete' => ['POST'],
                 ],
             ],
+            'checkType' =>[
+              'class' =>AuthCheckFilter::className(),
+              'type'  =>'admin',
+              ],
+            'loger' =>[
+              'class' =>Loger::className(),
+              ],
+ 
         ];
     }
 

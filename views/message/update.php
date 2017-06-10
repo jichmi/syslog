@@ -5,10 +5,9 @@ use yii\helpers\Html;
 /* @var $this yii\web\View */
 /* @var $model app\models\ArMessage */
 
-$this->title = 'Update Ar Message: ' . $model->id;
-$this->params['breadcrumbs'][] = ['label' => 'Ar Messages', 'url' => ['index']];
-$this->params['breadcrumbs'][] = ['label' => $model->id, 'url' => ['view', 'id' => $model->id]];
-$this->params['breadcrumbs'][] = 'Update';
+$this->title = '修改系统消息';
+$this->params['breadcrumbs'][] = ['label' => '系统消息', 'url' => ['index']];
+$this->params['breadcrumbs'][] = '修改';
 ?>
 <div class="ar-message-update">
 

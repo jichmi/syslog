@@ -36,7 +36,11 @@ class ArLog extends \yii\db\ActiveRecord
             [['para'], 'string', 'max' => 256],
         ];
     }
-
+    public function getUsername()
+    {
+        // 这里uid是auth表关联id, 关联user表的uid id是当前模型的主键id
+        return $this->hasOne(ArUser::className(), ['id' => 'user']);
+    } 
     /**
      * @inheritdoc
      */
@@ -50,4 +54,5 @@ class ArLog extends \yii\db\ActiveRecord
             'datetime' => 'Datetime',
         ];
     }
+
 }

@@ -23,7 +23,6 @@ class ArLoginfo extends \yii\db\ActiveRecord
             [['ip'], 'string', 'max' => 64],
         ];
     }
-
     public function attributeLabels()
     {
         return [

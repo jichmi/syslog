@@ -3,8 +3,13 @@
 namespace app\controllers;
 
 use Yii;
+use app\components\AuthCheckFilter;
+use app\components\Loger;
 use app\models\ArAuthinfo;
 use app\models\AuthinfoSearch;
+use app\models\Load;
+use app\models\UploadForm;
+use yii\web\UploadedFile;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
@@ -26,6 +31,9 @@ class AuthinfoController extends Controller
                     'delete' => ['POST'],
                 ],
             ],
+           'loger' =>[
+              'class' =>Loger::className(),
+              ],
         ];
     }
 
@@ -63,7 +71,7 @@ class AuthinfoController extends Controller
 
     public function actionDownload(){
          header('Content-Type:text/html;chatset=utf-8');
-         $xml = simplexml_load_file("../script/auth.xml");
+         $xml = simplexml_load_file("../script/seed.xml");
          $items = ArAuthinfo::find()->all();
          foreach($items as $item){
            $xnode = $xml->addChild('item');
@@ -138,4 +146,17 @@ class AuthinfoController extends Controller
             throw new NotFoundHttpException('The requested page does not exist.');
         }
     }
+     public function actionUpload()
+     {
+         $model = new UploadForm();
+
+         if (Yii::$app->request->isPost) {
+             $model->xmlFile = UploadedFile::getInstance($model, 'xmlFile');
+             if ($path = $model->upload()) {
+                 $info = Load::loadAuth($path,0).'条记录已载入';
+                 return $this->render('success',['info' => $info]);
+             }
+         }
+         return $this->render('upload', ['model' => $model]);
+     }
 }

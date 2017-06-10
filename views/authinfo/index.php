@@ -12,11 +12,11 @@ $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="ar-authinfo-index">
 
-    <h1><?= Html::encode($this->title) ?>        
-    <?= Html::a('download', ['download'], ['class' => 'btn btn-success']) ?>
-    <?= Html::a('统计', ['report'], ['class' => 'btn btn-success']) ?>
+    <h1>
+        <?= Html::a('备份', ['download'], ['class' => 'btn btn-success']) ?>
+        <?= Html::a('导入', ['upload'], ['class' => 'btn btn-success']) ?>
+        <?= Html::a('统计', ['report'], ['class' => 'btn btn-success']) ?>
     </h1>
-
     <?= GridView::widget([
         'dataProvider' => $dataProvider,
         'filterModel' => $searchModel,

@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<object name="auth">
+<item><date>2017-05-22 06:26:01</date><domean>debian</domean><grantor>CRON</grantor><user>pam_unix(cron:session)</user><order>session opened for user root by (uid=0)
+</order></item><item><date>2017-05-22 06:26:25</date><domean>debian</domean><grantor>su</grantor><user>unknow</user><order>Successful su for nobody by root
+</order></item><item><date>2017-05-22 06:26:25</date><domean>debian</domean><grantor>su</grantor><user>unknow</user><order>+ ??? root:nobody
+</order></item><item><date>2017-05-22 06:26:25</date><domean>debian</domean><grantor>su</grantor><user>pam_unix(su:session)</user><order>session opened for user nobody by (uid=0)
+</order></item><item><date>2017-05-22 06:26:25</date><domean>debian</domean><grantor>systemd-logind</grantor><user>unknow</user><order>New session 372 of user nobody.
+</order></item><item><date>2017-05-22 06:26:25</date><domean>debian</domean><grantor>systemd</grantor><user>pam_unix(systemd-user:session)</user><order>session opened for user nobody by (uid=0)
+</order></item><item><date>2017-05-22 06:26:26</date><domean>debian</domean><grantor>CRON</grantor><user>pam_unix(cron:session)</user><order>session closed for user root
+</order></item><item><date>2017-05-22 06:26:31</date><domean>debian</domean><grantor>su</grantor><user>pam_unix(su:session)</user><order>session closed for user nobody
+</order></item><item><date>2017-05-22 06:26:31</date><domean>debian</domean><grantor>systemd-logind</grantor><user>unknow</user><order>Removed session 372.
+</order></item><item><date>2017-05-22 06:26:31</date><domean>debian</domean><grantor>systemd</grantor><user>pam_unix(systemd-user:session)</user><order>session closed for user nobody
+</order></item><item><date>2017-05-22 06:26:32</date><domean>debian</domean><grantor>CRON</grantor><user>pam_unix(cron:session)</user><order>session closed for user root
+</order></item><item><date>2017-05-22 06:29:22</date><domean>debian</domean><grantor>sudo</grantor><user>pam_unix(sudo:auth)</user><order>authentication failure; logname=jcm uid=1000 euid=0 tty=/dev/pts/2 ruser=jcm rhost=  user=jcm
+</order></item><item><date>2017-05-22 06:29:28</date><domean>debian</domean><grantor>sudo</grantor><user>     jcm </user><order>TTY=pts/2 ; PWD=/var/www/syslog/script ; USER=root ; COMMAND=./test.sh
+</order></item><item><date>2017-05-22 06:29:28</date><domean>debian</domean><grantor>sudo</grantor><user>pam_unix(sudo:session)</user><order>session opened for user root by jcm(uid=0)
+</order></item><item><date>2017-05-22 06:29:28</date><domean>debian</domean><grantor>sudo</grantor><user>pam_unix(sudo:session)</user><order>session closed for user root
+</order></item><item><date>2017-05-22 06:29:34</date><domean>debian</domean><grantor>sudo</grantor><user>     jcm </user><order>TTY=pts/2 ; PWD=/var/www/syslog/script ; USER=root ; COMMAND=./test.sh
+</order></item><item><date>2017-05-22 06:29:34</date><domean>debian</domean><grantor>sudo</grantor><user>pam_unix(sudo:session)</user><order>session opened for user root by jcm(uid=0)
+</order></item><item><date>2017-05-22 06:29:34</date><domean>debian</domean><grantor>sudo</grantor><user>pam_unix(sudo:session)</user><order>session closed for user root
+</order></item><item><date>2017-05-22 06:29:47</date><domean>debian</domean><grantor>sudo</grantor><user>     jcm </user><order>TTY=pts/2 ; PWD=/var/www/syslog/script ; USER=root ; COMMAND=./test.sh
+</order></item><item><date>2017-05-22 06:29:47</date><domean>debian</domean><grantor>sudo</grantor><user>pam_unix(sudo:session)</user><order>session opened for user root by jcm(uid=0)
+</order></item><item><date>2017-05-22 06:29:47</date><domean>debian</domean><grantor>sudo</grantor><user>pam_unix(sudo:session)</user><order>session closed for user root
+</order></item><item><date>2017-05-22 06:29:49</date><domean>debian</domean><grantor>sudo</grantor><user>     jcm </user><order>TTY=pts/2 ; PWD=/var/www/syslog/script ; USER=root ; COMMAND=./test.sh
+</order></item><item><date>2017-05-22 06:29:49</date><domean>debian</domean><grantor>sudo</grantor><user>pam_unix(sudo:session)</user><order>session opened for user root by jcm(uid=0)
+</order></item><item><date>2017-05-22 06:29:49</date><domean>debian</domean><grantor>sudo</grantor><user>pam_unix(sudo:session)</user><order>session closed for user root
+</order></item><item><date>2017-05-22 06:29:51</date><domean>debian</domean><grantor>sudo</grantor><user>     jcm </user><order>TTY=pts/2 ; PWD=/var/www/syslog/script ; USER=root ; COMMAND=./test.sh
+</order></item><item><date>2017-05-22 06:29:51</date><domean>debian</domean><grantor>sudo</grantor><user>pam_unix(sudo:session)</user><order>session opened for user root by jcm(uid=0)
+</order></item><item><date>2017-05-22 06:29:51</date><domean>debian</domean><grantor>sudo</grantor><user>pam_unix(sudo:session)</user><order>session closed for user root
+</order></item><item><date>2017-05-22 06:32:08</date><domean>debian</domean><grantor>sudo</grantor><user>     jcm </user><order>TTY=pts/2 ; PWD=/var/www/syslog/script ; USER=root ; COMMAND=./test.sh
+</order></item><item><date>2017-05-22 06:32:08</date><domean>debian</domean><grantor>sudo</grantor><user>pam_unix(sudo:session)</user><order>session opened for user root by jcm(uid=0)
+</order></item><item><date>2017-05-22 06:32:08</date><domean>debian</domean><grantor>sudo</grantor><user>pam_unix(sudo:session)</user><order>session closed for user root
+</order></item><item><date>2017-05-22 06:32:31</date><domean>debian</domean><grantor>sudo</grantor><user>     jcm </user><order>TTY=pts/2 ; PWD=/var/www/syslog/script ; USER=root ; COMMAND=./test.sh
+</order></item><item><date>2017-05-22 06:32:31</date><domean>debian</domean><grantor>sudo</grantor><user>pam_unix(sudo:session)</user><order>session opened for user root by jcm(uid=0)
+</order></item><item><date>2017-05-22 06:32:31</date><domean>debian</domean><grantor>sudo</grantor><user>pam_unix(sudo:session)</user><order>session closed for user root
+</order></item><item><date>2017-05-22 06:33:14</date><domean>debian</domean><grantor>sudo</grantor><user>     jcm </user><order>TTY=pts/2 ; PWD=/var/www/syslog/script ; USER=root ; COMMAND=./test.sh
+</order></item><item><date>2017-05-22 06:33:14</date><domean>debian</domean><grantor>sudo</grantor><user>pam_unix(sudo:session)</user><order>session opened for user root by jcm(uid=0)
+</order></item><item><date>2017-05-22 06:33:14</date><domean>debian</domean><grantor>sudo</grantor><user>pam_unix(sudo:session)</user><order>session closed for user root
+</order></item><item><date>2017-05-22 06:33:25</date><domean>debian</domean><grantor>sudo</grantor><user>     jcm </user><order>TTY=pts/2 ; PWD=/var/www/syslog/script ; USER=root ; COMMAND=./test.sh
+</order></item><item><date>2017-05-22 06:33:25</date><domean>debian</domean><grantor>sudo</grantor><user>pam_unix(sudo:session)</user><order>session opened for user root by jcm(uid=0)
+</order></item><item><date>2017-05-22 06:33:25</date><domean>debian</domean><grantor>sudo</grantor><user>pam_unix(sudo:session)</user><order>session closed for user root
+</order></item><item><date>2017-05-22 06:34:01</date><domean>debian</domean><grantor>sudo</grantor><user>     jcm </user><order>TTY=pts/2 ; PWD=/var/www/syslog/script ; USER=root ; COMMAND=/usr/bin/vi /var/log/syslog
+</order></item><item><date>2017-05-22 06:34:01</date><domean>debian</domean><grantor>sudo</grantor><user>pam_unix(sudo:session)</user><order>session opened for user root by jcm(uid=0)
+</order></item><item><date>2017-05-22 06:34:04</date><domean>debian</domean><grantor>sudo</grantor><user>pam_unix(sudo:session)</user><order>session closed for user root
+</order></item><item><date>2017-05-22 06:34:10</date><domean>debian</domean><grantor>sudo</grantor><user>     jcm </user><order>TTY=pts/2 ; PWD=/var/www/syslog/script ; USER=root ; COMMAND=/usr/bin/vi /var/log/syslog.1
+</order></item><item><date>2017-05-22 06:34:10</date><domean>debian</domean><grantor>sudo</grantor><user>pam_unix(sudo:session)</user><order>session opened for user root by jcm(uid=0)
+</order></item><item><date>2017-05-22 06:34:12</date><domean>debian</domean><grantor>sudo</grantor><user>pam_unix(sudo:session)</user><order>session closed for user root
+</order></item><item><date>2017-05-22 06:34:28</date><domean>debian</domean><grantor>sudo</grantor><user>     jcm </user><order>TTY=pts/2 ; PWD=/var/www/syslog/script ; USER=root ; COMMAND=./test.sh
+</order></item><item><date>2017-05-22 06:34:28</date><domean>debian</domean><grantor>sudo</grantor><user>pam_unix(sudo:session)</user><order>session opened for user root by jcm(uid=0)
+</order></item><item><date>2017-05-22 06:34:29</date><domean>debian</domean><grantor>sudo</grantor><user>pam_unix(sudo:session)</user><order>session closed for user root
+</order></item><item><date>2017-05-22 06:36:08</date><domean>debian</domean><grantor>sudo</grantor><user>     jcm </user><order>TTY=pts/2 ; PWD=/var/www/syslog/script ; USER=root ; COMMAND=./test.sh
+</order></item><item><date>2017-05-22 06:36:08</date><domean>debian</domean><grantor>sudo</grantor><user>pam_unix(sudo:session)</user><order>session opened for user root by jcm(uid=0)
+</order></item><item><date>2017-05-22 06:36:09</date><domean>debian</domean><grantor>sudo</grantor><user>pam_unix(sudo:session)</user><order>session closed for user root
+</order></item><item><date>2017-05-22 06:36:54</date><domean>debian</domean><grantor>sudo</grantor><user>     jcm </user><order>TTY=pts/2 ; PWD=/var/www/syslog/script ; USER=root ; COMMAND=./test.sh
+</order></item><item><date>2017-05-22 06:36:54</date><domean>debian</domean><grantor>sudo</grantor><user>pam_unix(sudo:session)</user><order>session opened for user root by jcm(uid=0)
+</order></item><item><date>2017-05-22 06:36:57</date><domean>debian</domean><grantor>sudo</grantor><user>pam_unix(sudo:session)</user><order>session closed for user root
+</order></item><item><date>2017-05-22 06:37:38</date><domean>debian</domean><grantor>sudo</grantor><user>     jcm </user><order>TTY=pts/2 ; PWD=/var/www/syslog/script ; USER=root ; COMMAND=./test.sh
+</order></item><item><date>2017-05-22 06:37:38</date><domean>debian</domean><grantor>sudo</grantor><user>pam_unix(sudo:session)</user><order>session opened for user root by jcm(uid=0)
+</order></item><item><date>2017-05-22 06:37:38</date><domean>debian</domean><grantor>sudo</grantor><user>pam_unix(sudo:session)</user><order>session closed for user root
+</order></item><item><date>2017-05-22 06:38:02</date><domean>debian</domean><grantor>sudo</grantor><user>     jcm </user><order>TTY=pts/2 ; PWD=/var/www/syslog/script ; USER=root ; COMMAND=/usr/bin/vi /var/log/messages.1
+</order></item><item><date>2017-05-22 06:38:02</date><domean>debian</domean><grantor>sudo</grantor><user>pam_unix(sudo:session)</user><order>session opened for user root by jcm(uid=0)
+</order></item><item><date>2017-05-22 06:38:03</date><domean>debian</domean><grantor>sudo</grantor><user>pam_unix(sudo:session)</user><order>session closed for user root
+</order></item><item><date>2017-05-22 06:38:19</date><domean>debian</domean><grantor>sudo</grantor><user>     jcm </user><order>TTY=pts/2 ; PWD=/var/www/syslog/script ; USER=root ; COMMAND=./test.sh
+</order></item><item><date>2017-05-22 06:38:19</date><domean>debian</domean><grantor>sudo</grantor><user>pam_unix(sudo:session)</user><order>session opened for user root by jcm(uid=0)
+</order></item><item><date>2017-05-22 06:38:19</date><domean>debian</domean><grantor>sudo</grantor><user>pam_unix(sudo:session)</user><order>session closed for user root
+</order></item><item><date>2017-05-22 06:38:39</date><domean>debian</domean><grantor>sudo</grantor><user>     jcm </user><order>TTY=pts/2 ; PWD=/var/www/syslog/script ; USER=root ; COMMAND=./test.sh
+</order></item><item><date>2017-05-22 06:38:39</date><domean>debian</domean><grantor>sudo</grantor><user>pam_unix(sudo:session)</user><order>session opened for user root by jcm(uid=0)
+</order></item><item><date>2017-05-22 06:38:39</date><domean>debian</domean><grantor>sudo</grantor><user>pam_unix(sudo:session)</user><order>session closed for user root
+</order></item><item><date>2017-05-22 06:39:01</date><domean>debian</domean><grantor>CRON</grantor><user>pam_unix(cron:session)</user><order>session opened for user root by (uid=0)
+</order></item><item><date>2017-05-22 06:39:02</date><domean>debian</domean><grantor>CRON</grantor><user>pam_unix(cron:session)</user><order>session closed for user root
+</order></item><item><date>2017-05-22 06:43:01</date><domean>debian</domean><grantor>CRON</grantor><user>pam_unix(cron:session)</user><order>session opened for user root by (uid=0)
+</order></item><item><date>2017-05-22 06:43:01</date><domean>debian</domean><grantor>CRON</grantor><user>pam_unix(cron:session)</user><order>session closed for user root
+</order></item><item><date>2017-05-22 06:46:01</date><domean>debian</domean><grantor>CRON</grantor><user>pam_unix(cron:session)</user><order>session opened for user root by (uid=0)
+</order></item><item><date>2017-05-22 06:46:19</date><domean>debian</domean><grantor>CRON</grantor><user>pam_unix(cron:session)</user><order>session closed for user root
+</order></item><item><date>2017-05-22 07:03:01</date><domean>debian</domean><grantor>CRON</grantor><user>pam_unix(cron:session)</user><order>session opened for user root by (uid=0)
+</order></item></object>

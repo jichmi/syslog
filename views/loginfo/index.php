@@ -7,25 +7,23 @@ use yii\grid\GridView;
 /* @var $searchModel app\models\LoginfoSearch */
 /* @var $dataProvider yii\data\ActiveDataProvider */
 
-$this->title = '登录信息';
+$this->title = '登录信息详情';
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="ar-loginfo-index">
 
-    <h1><?= Html::encode($this->title) ?>
-        <?= Html::a('download data', ['download'], ['class' => 'btn btn-success']) ?>
+    <h1>
+        <?= Html::a('备份', ['download'], ['class' => 'btn btn-success']) ?>
+        <?= Html::a('导入', ['upload'], ['class' => 'btn btn-success']) ?>
         <?= Html::a('统计', ['report'], ['class' => 'btn btn-success']) ?>
     </h1>
-    <?php // echo $this->render('_search', ['model' => $searchModel]); ?>
 
-    <p>
-    </p>
     <?= GridView::widget([
         'dataProvider' => $dataProvider,
         'filterModel' => $searchModel,
         'columns' => [
             ['class' => 'yii\grid\SerialColumn'],
-
+            
             'datetime',
             'last',
             'status',
@@ -33,7 +31,10 @@ $this->params['breadcrumbs'][] = $this->title;
             'ter',
             'name',
 
-            ['class' => 'yii\grid\ActionColumn'],
+            [
+            'class' => 'yii\grid\ActionColumn',
+            'headerOptions' => ['width' => '80'],
+            ],
         ],
     ]); ?>
 </div>

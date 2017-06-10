@@ -18,7 +18,7 @@ class SettingSearch extends ArSetting
     public function rules()
     {
         return [
-            [['id', 'type'], 'integer'],
+            [['id', 'type', 'owner'], 'integer'],
             [['name', 'value'], 'safe'],
         ];
     }
@@ -61,6 +61,7 @@ class SettingSearch extends ArSetting
         $query->andFilterWhere([
             'id' => $this->id,
             'type' => $this->type,
+            'owner' => $this->owner,
         ]);
 
         $query->andFilterWhere(['like', 'name', $this->name])

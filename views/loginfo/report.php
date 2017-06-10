@@ -1,15 +1,23 @@
 <?php
 
 /* @var $this yii\web\View */
+use yii\helpers\Html;
 use miloschuman\highcharts\HighchartsAsset;
 
 HighchartsAsset::register($this)->withScripts(['highstock', 'modules/exporting', 'modules/drilldown']);
 
-$this->title = 'overview';
+$this->title = '登录信息统计';
+$this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="site-index">
-    <div id = "timeline" style="min-width:800px;height:400px;border:1px solid #D3D3D3" >timeline</div>
-    <div id = "pie" style="min-width:800px;height:400px;border:1px solid #D3D3D3" >pie</div>
+
+    <h1>
+        <?= Html::a('download data', ['download'], ['class' => 'btn btn-success']) ?>
+        <?= Html::a('详情', ['index'], ['class' => 'btn btn-success']) ?>
+    </h1>
+
+    <div id = "timeline" style="margin:10px;min-width:800px;height:400px;border:1px solid #D3D3D3" >timeline</div>
+    <div id = "pie" style="margin:10px;min-width:800px;height:400px;border:1px solid #D3D3D3" >pie</div>
 </div>
 <script>
 function funtimeline(){

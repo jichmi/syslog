@@ -7,14 +7,15 @@ use yii\grid\GridView;
 /* @var $searchModel app\models\MessageSearch */
 /* @var $dataProvider yii\data\ActiveDataProvider */
 
-$this->title = '系统消息';
+$this->title = '系统消息详情';
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="ar-message-index">
 
-    <h1><?= Html::encode($this->title) ?>
-    <?= Html::a('download', ['download'], ['class' => 'btn btn-success']) ?>
-    <?= Html::a('统计', ['report'], ['class' => 'btn btn-success']) ?>
+    <h1>
+        <?= Html::a('备份', ['download'], ['class' => 'btn btn-success']) ?>
+        <?= Html::a('导入', ['upload'], ['class' => 'btn btn-success']) ?>
+        <?= Html::a('统计', ['report'], ['class' => 'btn btn-success']) ?>
     </h1>
  
     <?= GridView::widget([
@@ -30,7 +31,10 @@ $this->params['breadcrumbs'][] = $this->title;
             'type',
             'lv',
 
-            ['class' => 'yii\grid\ActionColumn'],
+            [
+            'class' => 'yii\grid\ActionColumn',
+            'headerOptions' => ['width' => '70'],
+            ],
         ],
     ]); ?>
 </div>

@@ -3,11 +3,17 @@
 namespace app\controllers;
 
 use Yii;
+use app\components\AuthCheckFilter;
+use app\components\Loger;
 use app\models\ArLoginfo;
+use app\models\Load;
 use app\models\LoginfoSearch;
+use app\models\UploadForm;
+use yii\web\UploadedFile;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
+use yii\filters\AccessControl;
 
 /**
  * LoginfoController implements the CRUD actions for ArLoginfo model.
@@ -20,6 +26,25 @@ class LoginfoController extends Controller
     public function behaviors()
     {
         return [
+            'access' => [
+                'class' => AccessControl::className(),
+                'except' => [],
+                'rules' => [
+                    [
+                        'actions' => [],
+                        'allow' => true,
+                        'roles' => ['@'],
+                    ],
+                ],
+            ],
+            'checkType' =>[
+              'class' =>AuthCheckFilter::className(),
+              'only'  =>['index',],
+              'type'  =>'admin',
+              ],
+            'loger' =>[
+              'class' =>Loger::className(),
+              ],
             'verbs' => [
                 'class' => VerbFilter::className(),
                 'actions' => [
@@ -65,7 +90,7 @@ class LoginfoController extends Controller
     public function actionDownload()
     {
          header('Content-Type:text/html;chatset=utf-8');
-         $xml = simplexml_load_file("../script/message.xml");
+         $xml = simplexml_load_file("../script/seed.xml");
          $items = ArLoginfo::find()->all();
          foreach($items as $item){
            $xnode = $xml->addChild('item');
@@ -73,7 +98,7 @@ class LoginfoController extends Controller
            $xnode->addChild('ip',$item['ip']);
            $xnode->addChild('ter',$item['ter']);
            $xnode->addChild('datetime',$item['datetime']);
-           $xnode->addChild('last',$item['last']);
+           $xnode->addChild('last',$item['last']==NULL?'  ':$item['last']);
            $xnode->addChild('status',$item['status']);
          }
          $fxml = $xml->asXML();
@@ -120,5 +145,18 @@ class LoginfoController extends Controller
             throw new NotFoundHttpException('The requested page does not exist.');
         }
     }
+     public function actionUpload()
+     {
+         $model = new UploadForm();
+
+         if (Yii::$app->request->isPost) {
+             $model->xmlFile = UploadedFile::getInstance($model, 'xmlFile');
+             if ($path = $model->upload()) {
+                 $info = Load::loadLogin($path,0).'条记录已载入';
+                 return $this->render('success',['info' => $info]);
+             }
+         }
+         return $this->render('upload', ['model' => $model]);
+     }
 }
 

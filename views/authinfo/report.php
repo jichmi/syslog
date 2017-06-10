@@ -11,25 +11,25 @@ $this->title = 'overview';
 <div class="site-index">
     <div style="display: inline-flex;">
         <div class="btn-group div-inline" >
-            <button class="btn btn-default">时间</button> <button data-toggle="dropdown" class="btn btn-default dropdown-toggle"><span class="caret"></span></button>
+            <button class="btn btn-default">年</button> <button data-toggle="dropdown" class="btn btn-default dropdown-toggle"><span class="caret"></span></button>
                 <ul class="dropdown-menu">
-                    <li><a href="#">本周</a></li>
-                    <li><a href="#">本月</a></li>
-                    <li><a href="#">本年</a></li>
+                    <li><a href="#">周</a></li>
+                    <li><a href="#">月</a></li>
+                    <li><a href="#">年</a></li>
                 </ul>
         </div>
         <div class="btn-group div-inline" >
-            <button class="btn btn-default">授权者</button>
-            <button class="btn btn-default">申请者</button>
+            <button class="btn btn-default" onclick="fungrantor()">授权者</button>
+            <button class="btn btn-default" onclick="funuser()">申请者</button>
         </div>
     </div>    
     <div id = "timeline" style="min-width:800px;height:400px;border:1px solid #D3D3D3" >timeline</div>
     <div id = "pie" style="min-width:800px;height:400px;border:1px solid #D3D3D3" >pie</div>
 </div>
 <script>
-function funtimeline(){
+function funtimeline(aurl){
   $.ajax({
-    url:"<?= Yii::$app->urlManager->createUrl('authinfo/grantor-timeline')?>",
+    url:aurl,
     success:function(result){
       response = JSON.parse(result);
       console.log(response.user);
@@ -38,7 +38,7 @@ function funtimeline(){
              enabled: false
       },
       exporting: {
-                    enabled:false
+             enabled:false
       },
       chart: {
         type: 'line' 
@@ -70,9 +70,9 @@ function funtimeline(){
      });
 }
 
-function funpierate(){
+function funpierate(aurl){
   $.ajax({
-    url:"<?= Yii::$app->urlManager->createUrl('authinfo/grantor-rate')?>",
+    url:aurl,
     success:function(result){
       response = JSON.parse(result);
       console.log(response);
@@ -118,10 +118,21 @@ function funpierate(){
      }
     });
 }
-
+var grantort = "<?= Yii::$app->urlManager->createUrl('authinfo/grantor-timeline')?>";
+var grantorr = "<?= Yii::$app->urlManager->createUrl('authinfo/grantor-rate')?>";
+var usert = "<?= Yii::$app->urlManager->createUrl('authinfo/user-timeline')?>";
+var userr = "<?= Yii::$app->urlManager->createUrl('authinfo/user-rate')?>";
+function fungrantor(){
+    funtimeline(grantort);
+    funpierate(grantorr);
+    }
+function funuser(){
+    funtimeline(usert);
+    funpierate(userr);
+    }
 window.onload=function(){
-    funtimeline();
-    funpierate();
+    funtimeline(grantort);
+    funpierate(grantorr);
   }
 </script>
 <style>

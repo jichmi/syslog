@@ -6,8 +6,8 @@ use yii\helpers\Html;
 /* @var $this yii\web\View */
 /* @var $model app\models\ArSetting */
 
-$this->title = 'Create Ar Setting';
-$this->params['breadcrumbs'][] = ['label' => 'Ar Settings', 'url' => ['index']];
+$this->title = '添加设定';
+$this->params['breadcrumbs'][] = ['label' => '设定', 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="ar-setting-create">

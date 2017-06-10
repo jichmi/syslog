@@ -3,11 +3,15 @@
 namespace app\controllers;
 
 use Yii;
-use app\models\ArMessage;
-use app\models\MessageSearch;
+use yii\web\UploadedFile;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
+use app\components\Loger;
+use app\models\ArMessage;
+use app\models\Load;
+use app\models\MessageSearch;
+use app\models\UploadForm;
 
 /**
  * MessageController implements the CRUD actions for ArMessage model.
@@ -26,6 +30,10 @@ class MessageController extends Controller
                     'delete' => ['POST'],
                 ],
             ],
+            'loger' =>[
+              'class' =>Loger::className(),
+              ],
+ 
         ];
     }
 
@@ -79,7 +87,7 @@ class MessageController extends Controller
  
     public function actionDownload(){
          header('Content-Type:text/html;chatset=utf-8');
-         $xml = simplexml_load_file("../script/message.xml");
+         $xml = simplexml_load_file("../script/seed.xml");
          $items = ArMessage::find()->all();
          foreach($items as $item){
            $xnode = $xml->addChild('item');
@@ -191,4 +199,18 @@ class MessageController extends Controller
             throw new NotFoundHttpException('The requested page does not exist.');
         }
     }
+    public function actionUpload()
+     {
+         $model = new UploadForm();
+
+         if (Yii::$app->request->isPost) {
+             $model->xmlFile = UploadedFile::getInstance($model, 'xmlFile');
+             if ($path = $model->upload()) {
+                 $info = Load::loadMessage($path,0).'条记录已载入';
+                 return $this->render('success',['info' => $info]);
+             }
+         }
+         return $this->render('upload', ['model' => $model]);
+     }
+
 }
